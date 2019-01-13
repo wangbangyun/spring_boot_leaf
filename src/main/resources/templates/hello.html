@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:text="${name}">姓名</a>
+<hr/>
+
+<hr/>
+<a th:if="${age<11}">小孩</a>
+<a th:unless="${age<11}">大人</a>
+
+<table>
+    <tr>
+    <td>id</td>
+    <td>年龄</td>
+    <td>姓名</td>
+
+</tr>
+    <tr th:each="u : ${users}" >
+        <td th:text="${u.id}">id</td>
+        <td th:text="${u.age}">年龄</td>
+        <td th:text="${u.name}">姓名</td>
+    </tr>
+
+</table>
+<a th:text="${#dates .format(now,'yyyy-MM-dd HH:mm:ss')}"></a>
+</body>
+</html>
